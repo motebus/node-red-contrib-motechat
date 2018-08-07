@@ -1,0 +1,145 @@
+<script type="text/x-red" data-template-name="send">
+    <div class="grid-container">
+        
+		<div class="form-row">
+			<label for="node-input-name"><i class="icon-tag"></i> Name</label>
+			<input type="text" id="node-input-name" placeholder="sender">
+		</div>
+        
+        <div class="form-row">
+			<label for="node-input-subject"><i class="icon-tag"></i> Subject</label>
+			<input type="text" id="node-input-subject" placeholder="">
+		</div>
+
+        <div class="form-row node-input-targets-container-row">
+			<label for="node-input-targets"><i class="fa fa-tasks"></i>Targets</label>
+            <ol id="node-input-targets"></ol>
+        </div>
+
+        <!--div class="form-row">
+            <label for="node-input-data"><i class="fa fa-tasks"></i>Payload</label>
+            <input type="text" id="node-input-data" placeholder="">
+        </div-->
+    </div>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('send', {
+        category: 'motemsg',
+        color: '#C3E6F2',
+        defaults: {
+            targetList: { value: [{ target: '' }] },
+            name: { value: 'sender' },
+            subject: { value: '' },
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: "send.png",
+        label: function () {
+            return this.name || "send";
+        },
+        oneditprepare: function () {
+            $("#node-input-name").val(this.name)
+            $("#node-input-subject").val(this.subject)
+
+            $("#node-input-targets")
+                .css('min-height', '300px')
+                .css('min-width', '300px')
+                .editableList({
+                    addItem: function (row, index, data) {
+                        if (!data.hasOwnProperty('target')) {
+                            data = { target: "" };
+                        }
+
+                        var targetInputField = $('<input>', {
+                            type: 'text',
+                            class: 'node-input-target-address'
+                        }).typedInput({
+                            defaults: 'str',
+                            types: ['str']
+                        });
+
+                        $(row).append(targetInputField);
+                        targetInputField.typedInput('value', data.target)
+                    },
+                    sortable: true,
+                    removable: true
+                });
+
+            if (!this.targetList) {
+                this.targetList = [{ target: '' }];
+            }
+
+            this.targetList.forEach(function (target) {
+                $("#node-input-targets").editableList('addItem', target);
+            })
+        },
+        oneditsave: function () {
+            var targetList = $("#node-input-targets").editableList('items');
+            var node = this;
+
+            node.name = $("#node-input-name").val()
+            node.subject = $("#node-input-subject").val()
+            node.targetList = [];
+
+            targetList.each(function (element) {
+                var curRecord = $(this);
+                var record = {
+                    target: curRecord.find('.node-input-target-address').typedInput('value')
+                };
+                node.targetList.push(record);
+            });
+
+            console.log(JSON.stringify(node.targetList))
+        }
+    });
+</script>
+
+<script type="text/x-red" data-help-name="send">
+    <p>Motechat send node.</p>
+    <h3>Inputs</h3>
+		<dl class="message-properties">
+			<dt>payload
+				<span class="property-type">string | json object</span>
+			</dt>
+			<dd>The payload of message to send to the targets</dd>
+			<dt class="optional">name
+				<span class="property-type">string</span>
+			</dt>
+			<dd>The name of the node</dd>
+			<dt class="optional">subject
+				<span class="property-type">string</span>
+			</dt>
+			<dd>The subject of the node</dd>
+			<dt>targets
+				<span class="property-type">string</span>
+			</dt>
+			<dd>
+				The targets that want to send. They will be set to the targets' DDN.
+			</dd>
+		</dl>
+	
+	<h3>Outputs</h3>
+		<dl class="message-properties">
+			<dt>hostDDN 
+				<span class="property-type">string</span>
+			</dt>
+			<dd>The host DDN.</dd>
+			<dt>name
+				<span class="property-type">string</span>
+			</dt>
+			<dd>The name of the node.</dd>
+			<dt>payload
+				<span class="property-type">object</span>
+			</dt>
+			<dd>It contains1 the target's DDN, and the <code>Reply</code> object that contains <code>ErrCode</code> and <code>ErrMsg</code></dd>
+			<dt>target
+				<span class="property-type">string</span>
+			</dt>
+			<dd>The target that the message be sent to.</dd>
+			<dt>subject 
+				<span class="property-type">string</span>
+			</dt>
+			<dd>The subject of node.</dd>
+		</dl>
+</script>

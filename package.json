@@ -1,0 +1,25 @@
+{
+  "name": "node-red-contrib-motechat",
+  "description": "motecaht for node-red",
+  "dependencies": {
+    "fs-extra": "^7.0.0",
+    "motechat": "^1.2.7",
+    "nedb": "^1.8.0"
+  },
+  "keywords": [
+    "node-red",
+	"motechat",
+	"motebus",
+	"ultranet",
+	"ypcloud"
+  ],
+  "node-red": {
+    "nodes": {
+      "send": "send/send.js",
+      "call": "call/call.js",
+      "trigger": "trigger/trigger.js"
+    }
+  },
+  "version": "0.0.1",
+  "license": "MIT"
+}
