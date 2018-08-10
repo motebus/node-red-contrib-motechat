@@ -11,20 +11,20 @@
 </script>
 
 <script type="text/javascript">
-    RED.nodes.registerType('trigger ', {
-        category: 'motemsg',
-        color: '#C3E6F2',
-        defaults: {
-            triggerID: { value: '' },
-            name: { value: 'trigger' }
-        },
-        inputs: 1,
-        outputs: 1,
-        icon: "trigger.png",
-        label: function () {
-            return this.name || "trigger";
-        }
-    });
+	RED.nodes.registerType('trigger ', {
+		category: 'motechat',
+		color: '#C3E6F2',
+		defaults: {
+			triggerID: { value: '' },
+			name: { value: 'trigger' }
+		},
+		inputs: 1,
+		outputs: 1,
+		icon: "trigger.png",
+		label: function () {
+			return this.name || "trigger";
+		}
+	});
 </script>
 
 <script type="text/x-red" data-help-name="trigger ">

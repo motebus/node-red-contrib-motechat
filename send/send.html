@@ -25,7 +25,7 @@
 
 <script type="text/javascript">
     RED.nodes.registerType('send', {
-        category: 'motemsg',
+        category: 'motechat',
         color: '#C3E6F2',
         defaults: {
             targetList: { value: [{ target: '' }] },
@@ -33,7 +33,7 @@
             subject: { value: '' },
         },
         inputs: 1,
-        outputs: 1,
+        outputs: 2,
         icon: "send.png",
         label: function () {
             return this.name || "send";
@@ -101,8 +101,12 @@
 		<dl class="message-properties">
 			<dt>payload
 				<span class="property-type">string | json object</span>
+            </dt>
+            <dd>The payload of message to send to the targets</dd>
+            <dt>targets
+				<span class="property-type">array</span>
 			</dt>
-			<dd>The payload of message to send to the targets</dd>
+			<dd>The targets of message that want to send.</dd>
 			<dt class="optional">name
 				<span class="property-type">string</span>
 			</dt>

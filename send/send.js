@@ -20,29 +20,16 @@ module.exports = function (RED) {
         node.on('input', msg => {
             console.log('send msg : ', msg)
             let tarList = node.targetList
-            if (msg.dest) {
-                tarList = node.targetList.concat(
-                    msg.dest.map(item => ({ target: item }))
-                )
-
-                console.log('tarList', tarList)
+            if (msg.targets && Array.isArray(msg.targets)) {
+                tarList = msg.targets.map(item => ({ target: item }))
+                // tarList = node.targetList.concat(
+                //     msg.targets.map(item => ({ target: item }))
+                // )
             }
-
 
             tarList.forEach(record => {
                 let target = record.target
-                console.log('target : ', target)
-                console.log('msg : ', msg.payload)
                 if (target && target != '') {
-                    // sender.send(target, msg.payload, node.name, reply => {
-                    //     let newMsg = {
-                    //         payload: reply,
-                    //         target: target,
-                    //         subject: node.subject
-                    //     }
-                    //     node.send(newMsg)
-                    // })
-
                     sender.send(target, msg.payload, node.name).then(reply => {
                         let newMsg = {
                             hostDDN: getDDN(),
@@ -51,10 +38,9 @@ module.exports = function (RED) {
                             target: target,
                             subject: node.subject
                         }
-                        node.send(newMsg)
+                        
+                        node.send(!reply.Reply.ErrCode ? [newMsg, null] : [null, newMsg])
                     })
-
-
                 }
             })
         })
