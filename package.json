@@ -3,7 +3,7 @@
   "description": "motechat for node-red",
   "dependencies": {
     "fs-extra": "^7.0.0",
-    "motechat": "^1.2.7"
+    "motechat": "^1.2.10"
   },
   "keywords": [
     "node-red",
