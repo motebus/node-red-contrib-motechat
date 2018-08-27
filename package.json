@@ -3,7 +3,7 @@
   "description": "motechat for node-red",
   "dependencies": {
     "fs-extra": "^7.0.0",
-    "motechat": "^1.2.11"
+    "motechat": "^1.2.12"
   },
   "keywords": [
     "node-red",
@@ -19,6 +19,6 @@
       "trigger": "trigger/trigger.js"
     }
   },
-  "version": "0.0.5",
+  "version": "0.0.6",
   "license": "MIT"
 }
