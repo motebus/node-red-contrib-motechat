@@ -12,8 +12,8 @@ module.exports = function (RED) {
 
         node.on('input', msg => {
             let [target, func, name] = [
-                config.target,
-                config.func,
+                msg.target || config.target,
+                msg.func || config.func,
                 config.name
             ]
 
