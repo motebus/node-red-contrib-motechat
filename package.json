@@ -7,10 +7,10 @@
   },
   "keywords": [
     "node-red",
-	"motechat",
-	"motebus",
-	"ultranet",
-	"ypcloud"
+    "motechat",
+    "motebus",
+    "ultranet",
+    "ypcloud"
   ],
   "node-red": {
     "nodes": {
@@ -19,6 +19,6 @@
       "trigger": "trigger/trigger.js"
     }
   },
-  "version": "0.0.7",
+  "version": "0.0.8",
   "license": "MIT"
 }

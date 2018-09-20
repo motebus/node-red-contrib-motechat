@@ -1,6 +1,5 @@
 module.exports = function (RED) {
     "use strict"
-    //let sender = require('./lib/sender.js')
     let sender = {
         send: require('../lib/mcClient.js').send
     }
@@ -38,8 +37,8 @@ module.exports = function (RED) {
                             target: target,
                             subject: node.subject
                         }
-                        
-                        node.send(!reply.Reply.ErrCode ? [newMsg, null] : [null, newMsg])
+
+                        node.send(!reply.ErrCode ? [newMsg, null] : [null, newMsg])
                     })
                 }
             })
