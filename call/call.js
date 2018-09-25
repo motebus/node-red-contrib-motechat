@@ -30,7 +30,7 @@ module.exports = function (RED) {
                         payload: reply
                     }
 
-                    node.send(!reply.ErrCode ? [newMsg, null] : [null, newMsg])
+                    node.send(reply.ErrCode == 0 ? [newMsg, null] : [null, newMsg])
                 })
             }
         })
