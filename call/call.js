@@ -1,6 +1,5 @@
 module.exports = function (RED) {
     "use strict"
-    //let caller = require('./lib/caller.js')
     let caller = {
         call: require('../lib/mcClient.js').call
     }
@@ -30,7 +29,7 @@ module.exports = function (RED) {
                         payload: reply
                     }
 
-                    node.send(reply.Reply.ErrCode == 0 ? [newMsg, null] : [null, newMsg])
+                    node.send(reply[0].Reply.ErrCode == 0 ? [newMsg, null] : [null, newMsg])
                 })
             }
         })

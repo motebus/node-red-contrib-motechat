@@ -11,19 +11,15 @@ module.exports = function (RED) {
             node.send(msg)
         })
 
-        let callback = (ch, head, from, to, msgtype, data) => {
+        let callback = (ch, inctl, data) => {
             let { triggerID, dest, ...payload } = data
             let msg = {
-                ch: ch,
-                head: head,
-                from: from,
-                to: to,
-                msgtype: msgtype,
+                ch,
+                ...inctl,
                 trigger: triggerID,
                 dest: dest,
                 payload: payload
             }
-
             node.send(msg)
         }
 

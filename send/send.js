@@ -37,8 +37,7 @@ module.exports = function (RED) {
                             target: target,
                             subject: node.subject
                         }
-
-                        node.send(reply.Reply.ErrCode == 0 ? [newMsg, null] : [null, newMsg])
+                        node.send(reply[0].Reply.ErrCode == 0 ? [newMsg, null] : [null, newMsg])
                     })
                 }
             })
