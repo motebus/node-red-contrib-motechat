@@ -36,16 +36,18 @@
 				<span class="property-type">string</span>
 			</dt>
 			<dd>The name of the node.</dd>
-			<dt class="optional"> onEvent
+			<dt class="optional"> event name
 				<span class="property-type">string</span>
 			</dt>
-			<dd>set the one-time event listener</dd>
+			<dd>Set the event name for listener.</dd>
+                        <dd>With the payload property for the msg object, it will set one-time listener.</dd>
+                        <dd>With the event name for node settings, it will set listener that be invoked every time. </dd>
 		</dl>
 		
 	<h3>Outputs</h3>
 		<dl class="message-properties">
-			<dt>ch
-				<span class="property-type">string</span>
+			<dt>msg
+				<span class="property-type">object</span>
 			</dt>
 		</dl>
 </script>
@@ -88,16 +90,16 @@
 				<span class="property-type">string</span>
 			</dt>
 			<dd>The name of the node.</dd>
-			<dt class="optional"> emitter
+			<dt class="optional"> event name
 				<span class="property-type">string</span>
 			</dt>
-			<dd>set the event emitter</dd>
+			<dd>Set the event name that will be emitted when input coming. </dd>
 		</dl>
 		
 	<h3>Outputs</h3>
 		<dl class="message-properties">
-			<dt>ch
-				<span class="property-type">string</span>
+			<dt>msg
+				<span class="property-type">object</span>
 			</dt>
 		</dl>
 </script>
