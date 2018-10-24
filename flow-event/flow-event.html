@@ -1,4 +1,4 @@
-<script type="text/x-red" data-template-name="flowOnEvent">    
+<script type="text/x-red" data-template-name="onEvent">    
     <div class="form-row">
         <label for="node-input-name"><i class="icon-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="onEvent">
@@ -11,7 +11,7 @@
 </script>
 
 <script type="text/javascript">
-    RED.nodes.registerType('flowOnEvent', {
+    RED.nodes.registerType('onEvent', {
         category: 'motechat',
         color: '#C3E6F2',
         defaults: {
@@ -27,7 +27,7 @@
     });
 </script>
 
-<script type="text/x-red" data-help-name="flowOnEvent">
+<script type="text/x-red" data-help-name="onEvent">
     <p>flow event listener node</p>
 	
 	<h3>Inputs</h3>
@@ -50,7 +50,7 @@
 		</dl>
 </script>
 
-<script type="text/x-red" data-template-name="flowEmit">    
+<script type="text/x-red" data-template-name="emit">    
     <div class="form-row">
         <label for="node-input-name"><i class="icon-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="flowEmit">
@@ -63,7 +63,7 @@
 </script>
 
 <script type="text/javascript">
-    RED.nodes.registerType('flowEmit', {
+    RED.nodes.registerType('emit', {
         category: 'motechat',
         color: '#C3E6F2',
         defaults: {
@@ -79,7 +79,7 @@
     });
 </script>
 
-<script type="text/x-red" data-help-name="flowEmit">
+<script type="text/x-red" data-help-name="emit">
     <p>flow event emitter node</p>
 	
 	<h3>Inputs</h3>

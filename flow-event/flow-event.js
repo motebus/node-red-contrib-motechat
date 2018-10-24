@@ -1,43 +1,46 @@
+const events = require('events')
+const flowEvent = new events.EventEmitter()
+
 module.exports = function (RED) {
     "use strict"
-    let { on, once, emit, removeAllListeners } = require('../lib/flowEvent.js')
 
     function flowOnEvent(config) {
         RED.nodes.createNode(this, config)
         let node = this
         node.name = config.name
 
-        let defaultEventName = node.event || ''
+        let defaultEventName = config.event || ''
         if (defaultEventName != '') {
-            on(defaultEventName, (msg) => {
+            flowEvent.on(`${defaultEventName}`, (msg) => {
                 node.send(msg)
             })
         }
 
         node.on('input', msg => {
-            let { eventName } = msg
+            if (!msg.payload) return
+            let { eventName } = msg.payload
             if (eventName == '') return
-            once(`${eventName}`, (msg) => {
+            flowEvent.once(`${eventName}`, (msg) => {
                 node.send(msg)
             })
         })
-        node.on('close', () => { removeAllListeners() })
+        node.on('close', () => { flowEvent.removeAllListeners() })
     }
-    RED.nodes.registerType("flowOnEvent", flowOnEvent)
+    RED.nodes.registerType("onEvent", flowOnEvent)
 
     function flowEmit(config) {
         RED.nodes.createNode(this, config)
         let node = this
         node.name = config.name
 
-        let defaultEventName = node.event || ''
-
+        let eventName = config.emit || ''
         node.on('input', msg => {
-            let eventName = msg.eventName || defaultEventName
+            if (!msg.payload) return 
+            eventName = msg.payload.eventName || eventName
             if (eventName == '') return
-
-            emit(eventName, msg)
+            flowEvent.emit(eventName, msg)
+            node.send({eventName, msg})
         })
     }
-    RED.nodes.registerType("flowEmit", flowEmit)
+    RED.nodes.registerType("emit", flowEmit)
 }
