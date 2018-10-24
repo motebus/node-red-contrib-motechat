@@ -17,7 +17,8 @@
     "nodes": {
       "send": "send/send.js",
       "call": "call/call.js",
-      "trigger": "trigger/trigger.js"
+      "trigger": "trigger/trigger.js",
+      "event": "flow-event/flow-event.js"
     }
   },
   "version": "0.0.13",
