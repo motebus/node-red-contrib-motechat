@@ -12,6 +12,7 @@ module.exports = function (RED) {
         })
 
         let callback = (ch, inctl, data) => {
+            console.log('rec data: ',callback)
             let { triggerID, dest, ...payload } = data
             let msg = {
                 ch,
