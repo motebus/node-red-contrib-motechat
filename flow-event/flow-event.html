@@ -6,7 +6,10 @@
     
     <div class="form-row node-input-targets-container-row">
         <label for="node-input-event"><i class="fa fa-tasks"></i>event</label>
-        <input type="text" id="node-input-event" placeholder="">
+        <select id="node-input-event">
+            <option value="message" selected>message</option>
+            <option value="status">status</option>
+        </select>
     </div>
 </script>
 
@@ -15,7 +18,7 @@
         category: 'motechat',
         color: '#C3E6F2',
         defaults: {
-            event: { value: '' },
+            event: { value: 'message' },
             name: { value: 'event' }
         },
         inputs: 1,
@@ -28,7 +31,7 @@
 </script>
 
 <script type="text/x-red" data-help-name="onEvent">
-    <p>flow event listener node</p>
+    <p>motechat onEvent node</p>
 	
 	<h3>Inputs</h3>
 		<dl class="message-properties">
@@ -36,65 +39,11 @@
 				<span class="property-type">string</span>
 			</dt>
 			<dd>The name of the node.</dd>
-			<dt class="optional"> event name
-				<span class="property-type">string</span>
+			<dt class="optional"> onEvent signal
+				<span class="property-type">option</span>
 			</dt>
-			<dd>Set the event name for listener.</dd>
-                        <dd>With the payload property for the msg object, it will set one-time listener.</dd>
-                        <dd>With the event name for node settings, it will set listener that be invoked every time. </dd>
-		</dl>
-		
-	<h3>Outputs</h3>
-		<dl class="message-properties">
-			<dt>msg
-				<span class="property-type">object</span>
-			</dt>
-		</dl>
-</script>
-
-<script type="text/x-red" data-template-name="emit">    
-    <div class="form-row">
-        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
-        <input type="text" id="node-input-name" placeholder="flowEmit">
-    </div>
-    
-    <div class="form-row node-input-targets-container-row">
-        <label for="node-input-emit"><i class="fa fa-tasks"></i>emit</label>
-        <input type="text" id="node-input-emit" placeholder="">
-    </div>
-</script>
-
-<script type="text/javascript">
-    RED.nodes.registerType('emit', {
-        category: 'motechat',
-        color: '#C3E6F2',
-        defaults: {
-            emit: { value: '' },
-            name: { value: 'emit' }
-        },
-        inputs: 1,
-        outputs: 1,
-        icon: "emit.png",
-        label: function () {
-            return this.name || "emit";
-        }
-    });
-</script>
-
-<script type="text/x-red" data-help-name="emit">
-    <p>flow event emitter node</p>
-	
-	<h3>Inputs</h3>
-		<dl class="message-properties">
-			<dt class="optional">name
-				<span class="property-type">string</span>
-			</dt>
-			<dd>The name of the node.</dd>
-			<dt class="optional"> event name
-				<span class="property-type">string</span>
-			</dt>
-			<dd>Set the event name that will be emitted when input coming. </dd>
-		</dl>
+			<dd>Set the motecaht onEvent.</dd>
+                </dl>
 		
 	<h3>Outputs</h3>
 		<dl class="message-properties">
