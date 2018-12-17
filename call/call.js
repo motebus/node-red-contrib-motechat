@@ -10,8 +10,8 @@ module.exports = function (RED) {
         let node = this
 
         node.on('input', msg => {
-            let [target, func, name] = [
-                msg.target || config.target,
+            let [topic, func, name] = [
+                msg.topic || config.topic,
                 msg.func || config.func,
                 config.name
             ]
@@ -21,8 +21,8 @@ module.exports = function (RED) {
                 return
             }
 
-            if (target && target != '') {
-                caller.call(target, func, msg.payload, name).then(reply => {
+            if (topic && topic != '') {
+                caller.call(topic, func, msg.payload, name).then(reply => {
                     let newMsg = {
                         hostDDN: getDDN(),
                         name: name,

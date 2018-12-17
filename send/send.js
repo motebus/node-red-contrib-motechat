@@ -9,37 +9,31 @@ module.exports = function (RED) {
         RED.nodes.createNode(this, config)
         let node = this
 
-        node.targetList = config.targetList
-        if (!node.targetList) {
-            node.targetList = []
-        }
+        node.topicList = (config.topic != '') ? [config.topic] : []
 
         node.name = config.name
         node.subject = config.subject
         node.on('input', msg => {
+            console.log('node: ', node)
             console.log('send msg : ', msg)
-            let tarList = node.targetList
-            if (msg.targets && Array.isArray(msg.targets)) {
-                tarList = msg.targets.map(item => ({ target: item }))
-                // tarList = node.targetList.concat(
-                //     msg.targets.map(item => ({ target: item }))
-                // )
+            
+            let tarList = node.topicList
+            if (msg.topics && Array.isArray(msg.topics)) {
+                tarList = msg.topics.filter(item => item != '')
+                // tarList = msg.topics.map(item => ({ topic: item }))
             }
-
-            tarList.forEach(record => {
-                let target = record.target
-                if (target && target != '') {
-                    sender.send(target, msg.payload, node.name).then(reply => {
-                        let newMsg = {
-                            hostDDN: getDDN(),
-                            name: node.name,
-                            payload: reply,
-                            target: target,
-                            subject: node.subject
-                        }
-                        node.send(reply[0].Reply.ErrCode == 0 ? [newMsg, null] : [null, newMsg])
-                    })
-                }
+            
+            tarList.forEach(topic => {
+                sender.send(topic, msg.payload, node.name).then(reply => {
+                    let newMsg = {
+                        hostDDN: getDDN(),
+                        name: node.name,
+                        payload: reply,
+                        topic: topic,
+                        subject: node.subject
+                    }
+                    node.send(reply[0].Reply.ErrCode == 0 ? [newMsg, null] : [null, newMsg])
+                })
             })
         })
     }

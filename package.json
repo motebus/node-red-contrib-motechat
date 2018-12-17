@@ -4,7 +4,7 @@
   "dependencies": {
     "fs-extra": "^7.0.0",
     "level": "^4.0.0",
-    "motechat": "^1.3.0"
+    "motechat": "^1.4.2"
   },
   "keywords": [
     "node-red",
@@ -20,7 +20,7 @@
       "event": "flow-event/flow-event.js"
     }
   },
-  "version": "0.0.15",
+  "version": "0.1.0",
   "license": "MIT",
   "engines": {
     "node": ">=8"

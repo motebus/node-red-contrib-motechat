@@ -1,25 +1,17 @@
 <script type="text/x-red" data-template-name="send">
-    <div class="grid-container">
-        
-		<div class="form-row">
-			<label for="node-input-name"><i class="icon-tag"></i> Name</label>
-			<input type="text" id="node-input-name" placeholder="sender">
-		</div>
-        
-        <div class="form-row">
-			<label for="node-input-subject"><i class="icon-tag"></i> Subject</label>
-			<input type="text" id="node-input-subject" placeholder="">
-		</div>
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="sender">
+    </div>
+    
+    <div class="form-row">
+        <label for="node-input-subject"><i class="icon-tag"></i> Subject</label>
+        <input type="text" id="node-input-subject" placeholder="">
+    </div>
 
-        <div class="form-row node-input-targets-container-row">
-			<label for="node-input-targets"><i class="fa fa-tasks"></i>Targets</label>
-            <ol id="node-input-targets"></ol>
-        </div>
-
-        <!--div class="form-row">
-            <label for="node-input-data"><i class="fa fa-tasks"></i>Payload</label>
-            <input type="text" id="node-input-data" placeholder="">
-        </div-->
+    <div class="form-row">
+        <label for="node-input-topic"><i class="fa fa-tag"></i> topic</label>
+        <input type="text" id="node-input-topic" placeholder=""/>
     </div>
 </script>
 
@@ -28,7 +20,8 @@
         category: 'motechat',
         color: '#C3E6F2',
         defaults: {
-            targetList: { value: [{ target: '' }] },
+            // topicList: { value: [{ topic: '' }] },
+            topic: { value: '' },
             name: { value: 'sender' },
             subject: { value: '' },
         },
@@ -38,60 +31,73 @@
         label: function () {
             return this.name || "send";
         },
-        oneditprepare: function () {
-            $("#node-input-name").val(this.name)
-            $("#node-input-subject").val(this.subject)
+        // oneditprepare: function () {
+        //     $("#node-input-name").val(this.name)
+        //     $("#node-input-subject").val(this.subject)
 
-            $("#node-input-targets")
-                .css('min-height', '300px')
-                .css('min-width', '300px')
-                .editableList({
-                    addItem: function (row, index, data) {
-                        if (!data.hasOwnProperty('target')) {
-                            data = { target: "" };
-                        }
+        //     $("#node-input-topics")
+        //         .css('min-height', '300px')
+        //         .css('min-width', '300px')
+        //         .editableList({
+        //             addItem: function (row, index, data) {
+        //                 if (!data.hasOwnProperty('topic')) {
+        //                     data = { topic: "" };
+        //                 }
 
-                        var targetInputField = $('<input>', {
-                            type: 'text',
-                            class: 'node-input-target-address'
-                        }).typedInput({
-                            defaults: 'str',
-                            types: ['str']
-                        });
+        //                 var topicInputField = $('<input>', {
+        //                     id: `node-input-topic-${index}`,
+        //                     class: 'node-input-topic-address',
+        //                     type: 'text'
+        //                 }).typedInput({
+        //                     defaults: 'str',
+        //                     types: ['str']
+        //                 })
 
-                        $(row).append(targetInputField);
-                        targetInputField.typedInput('value', data.target)
-                    },
-                    sortable: true,
-                    removable: true
-                });
+        //                 $(row).append(topicInputField);
+        //                 topicInputField.typedInput('value', data.topic)
 
-            if (!this.targetList) {
-                this.targetList = [{ target: '' }];
-            }
 
-            this.targetList.forEach(function (target) {
-                $("#node-input-targets").editableList('addItem', target);
-            })
-        },
-        oneditsave: function () {
-            var targetList = $("#node-input-targets").editableList('items');
-            var node = this;
+        //                 var topicInputField = $('<input>', {
+        //                     id: `node-input-topic-${index}`,
+        //                     class: 'node-input-topic-address',
+        //                     type: 'text'
+        //                 }).typedInput({
+        //                     defaults: 'str',
+        //                     types: ['str']
+        //                 })
 
-            node.name = $("#node-input-name").val()
-            node.subject = $("#node-input-subject").val()
-            node.targetList = [];
+        //                 topicInputField.typedInput('value', data.topic)
+        //             },
+        //             sortable: true,
+        //             removable: true
+        //         });
 
-            targetList.each(function (element) {
-                var curRecord = $(this);
-                var record = {
-                    target: curRecord.find('.node-input-target-address').typedInput('value')
-                };
-                node.targetList.push(record);
-            });
+        //     if (!this.topicList) {
+        //         this.topicList = [{ topic: '' }];
+        //     }
 
-            console.log(JSON.stringify(node.targetList))
-        }
+        //     this.topicList.forEach(function (topic) {
+        //         $("#node-input-topics").editableList('addItem', { topic: topic || '' });
+        //     })
+        // },
+        // oneditsave: function () {
+        //     var topicList = $("#node-input-topics").editableList('items');
+        //     var node = this;
+
+        //     node.name = $("#node-input-name").val()
+        //     node.subject = $("#node-input-subject").val()
+        //     node.topicList = [];
+
+        //     topicList.each(function (element) {
+        //         var curRecord = $(this);
+        //         var record = {
+        //             topic: curRecord.find('.node-input-topic-address').typedInput('value')
+        //         };
+        //         node.topicList.push(record);
+        //     });
+
+        //     console.log(JSON.stringify(node.topicList))
+        // }
     });
 </script>
 
@@ -102,11 +108,11 @@
 			<dt>payload
 				<span class="property-type">string | json object</span>
             </dt>
-            <dd>The payload of message to send to the targets</dd>
-            <dt>targets
+            <dd>The payload of message to send to the topics</dd>
+            <dt>topics
 				<span class="property-type">array</span>
 			</dt>
-			<dd>The targets of message that want to send.</dd>
+			<dd>The topics of message that want to send.</dd>
 			<dt class="optional">name
 				<span class="property-type">string</span>
 			</dt>
@@ -115,11 +121,11 @@
 				<span class="property-type">string</span>
 			</dt>
 			<dd>The subject of the node</dd>
-			<dt>targets
+			<dt>topics
 				<span class="property-type">string</span>
 			</dt>
 			<dd>
-				The targets that want to send. They will be set to the targets' DDN.
+				The topics that want to send. They will be set to the topics' DDN.
 			</dd>
 		</dl>
 	
@@ -136,11 +142,11 @@
 			<dt>payload
 				<span class="property-type">object</span>
 			</dt>
-			<dd>It contains1 the target's DDN, and the <code>Reply</code> object that contains <code>ErrCode</code> and <code>ErrMsg</code></dd>
-			<dt>target
+			<dd>It contains1 the topic's DDN, and the <code>Reply</code> object that contains <code>ErrCode</code> and <code>ErrMsg</code></dd>
+			<dt>topic
 				<span class="property-type">string</span>
 			</dt>
-			<dd>The target that the message be sent to.</dd>
+			<dd>The topic that the message be sent to.</dd>
 			<dt>subject 
 				<span class="property-type">string</span>
 			</dt>
