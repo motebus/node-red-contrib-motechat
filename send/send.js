@@ -18,15 +18,15 @@ module.exports = function (RED) {
             console.log('send msg : ', msg)
 
             let tarList = node.topicList
-            if (!msg.topics) tarList = []
+            if (!msg.topic) tarList = []
 
-            if (msg.topics && Array.isArray(msg.topics)) {
-                tarList = msg.topics.filter(item => item != '')
-                // tarList = msg.topics.map(item => ({ topic: item }))
+            if (msg.topic && Array.isArray(msg.topic)) {
+                tarList = msg.topic.filter(item => item != '')
+                // tarList = msg.topic.map(item => ({ topic: item }))
             }
 
-            if (msg.topics && typeof msg.topics === 'string') {
-                tarList = [msg.topics]
+            if (msg.topic && typeof msg.topic === 'string') {
+                tarList = [msg.topic]
             }
 
             tarList.forEach(topic => {
