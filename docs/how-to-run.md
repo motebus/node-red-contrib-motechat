@@ -6,6 +6,8 @@
 
 2. Install the node-red-contrib-motechat
 
+   ![](https://raw.githubusercontent.com/motebus/node-red-contrib-motechat/master/assets/running-on-windows.png)
+
    ``` bash
    # change directory to ~/.node-red
    npm install --save node-red-contrib-motechat
