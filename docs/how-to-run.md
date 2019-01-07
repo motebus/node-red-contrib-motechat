@@ -6,8 +6,6 @@
 
 2. Install the node-red-contrib-motechat
 
-   ![](/home/slime3251/文件/螢幕快照_2019-01-07_10-42-19.png)
-
    ``` bash
    # change directory to ~/.node-red
    npm install --save node-red-contrib-motechat

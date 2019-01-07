@@ -18,8 +18,6 @@ module.exports = function (RED) {
             console.log('send msg : ', msg)
 
             let tarList = node.topicList
-            if (!msg.topic) tarList = []
-
             if (msg.topic && Array.isArray(msg.topic)) {
                 tarList = msg.topic.filter(item => item != '')
                 // tarList = msg.topic.map(item => ({ topic: item }))
