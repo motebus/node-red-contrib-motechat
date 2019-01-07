@@ -14,7 +14,8 @@
    ```
 
 3. Run the MoteBus program
-   Download the MoteBus from the following link
+
+   Download here
    https://github.com/MoteChat/motebus/releases
 
    ```bash
