@@ -30,7 +30,7 @@ module.exports = function (RED) {
                     }
 
                     node.send(reply[0].Reply.ErrCode == 0 ? [newMsg, null] : [null, newMsg])
-                })
+                }).catch(e => console.error(e))
             }
         })
     }
