@@ -23,11 +23,11 @@ module.exports = function (RED) {
 
             if (topic && topic != '') {
                 caller.call(topic, func, msg.payload, name).then(reply => {
-                    let newMsg = {
+                    let newMsg = Object.assign(msg, {
                         hostDDN: getDDN(),
                         name: name,
                         payload: reply
-                    }
+                    })
 
                     node.send(reply[0].Reply.ErrCode == 0 ? [newMsg, null] : [null, newMsg])
                 }).catch(e => console.error(e))

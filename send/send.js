@@ -29,13 +29,14 @@ module.exports = function (RED) {
 
             tarList.forEach(topic => {
                 sender.send(topic, msg.payload, node.name).then(reply => {
-                    let newMsg = {
+                    let newMsg = Object.assign(msg, {
                         hostDDN: getDDN(),
                         name: node.name,
                         payload: reply,
                         topic: topic,
                         subject: node.subject
-                    }
+                    })
+
                     node.send(reply[0].Reply.ErrCode == 0 ? [newMsg, null] : [null, newMsg])
                 }).catch(e => console.error(e))
             })
