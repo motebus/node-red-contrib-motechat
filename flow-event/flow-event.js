@@ -7,7 +7,7 @@ module.exports = function (RED) {
         let node = this
         node.name = config.name
 
-        let callback = msg =>  node.send({...msg})
+        let callback = msg => node.send({ ...msg })
         //let callback = msg => { console.log(msg) }
         let defaultEventName = config.event
         if (defaultEventName === 'status') {
@@ -30,4 +30,17 @@ module.exports = function (RED) {
         node.on('close', () => { removeEvent(defaultEventName, callback) })
     }
     RED.nodes.registerType("onEvent", flowOnEvent)
+
+    function flowReEvent(config) {
+        RED.nodes.createNode(this, config)
+        let node = this
+        let { errorCode, errorMsg } = config
+
+        node.on('input', msg => {
+            if (!msg.mcBack) return
+            if (typeof msg.mcBack !== 'function') return
+            msg.mcBack({ errorCode, errorMsg, data: msg.payload })
+        })
+    }
+    RED.nodes.registerType("reEvent", flowReEvent)
 }

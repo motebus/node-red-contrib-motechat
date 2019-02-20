@@ -1,33 +1,16 @@
-<script type="text/x-red" data-template-name="onEvent">    
+<script type="text/x-red" data-template-name="onEvent">
     <div class="form-row">
         <label for="node-input-name"><i class="icon-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="onEvent">
     </div>
     
     <div class="form-row node-input-targets-container-row">
-        <label for="node-input-event"><i class="fa fa-tasks"></i>event</label>
+        <label for="node-input-event"><i class="fa fa-tasks"></i>onEvent</label>
         <select id="node-input-event">
             <option value="message" selected>message</option>
             <option value="status">status</option>
         </select>
     </div>
-</script>
-
-<script type="text/javascript">
-    RED.nodes.registerType('onEvent', {
-        category: 'motechat',
-        color: '#C3E6F2',
-        defaults: {
-            event: { value: 'message' },
-            name: { value: 'event' }
-        },
-        inputs: 1,
-        outputs: 1,
-        icon: "event.png",
-        label: function () {
-            return this.name || "event";
-        }
-    });
 </script>
 
 <script type="text/x-red" data-help-name="onEvent">
@@ -51,4 +34,71 @@
 				<span class="property-type">object</span>
 			</dt>
 		</dl>
+</script>
+
+<script type="text/x-red" data-template-name="reEvent">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="reEvent">
+    </div> 
+    <div class="form-row">
+        <label for="node-input-errorCode"><i class="fa fa-long-arrow-left"></i>Error Code</label>
+        <input type="number" id="node-input-errorCode" value="0">
+    </div>
+    <div class="form-row">
+        <label for="node-input-errorMsg"><i class="fa fa-long-arrow-left"></i>Error Message</label>
+        <input type="text" id="node-input-errorMsg" value="OK">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="reEvent">
+    <p>motechat reEvent node</p>
+	
+	<h3>Inputs</h3>
+		<dl class="message-properties">
+			<dt class="optional">name
+				<span class="property-type">string</span>
+			</dt>
+			<dd>The name of the node.</dd>
+			<dt class="optional"> error code
+				<span class="property-type">number</span>
+			</dt>
+			<dd>Set the motecaht reEvent error code</dd>
+            <dt class="optional"> error message
+				<span class="property-type">string</span>
+			</dt>
+			<dd>Set the motecaht reEvent error message</dd>
+        </dl>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('onEvent', {
+        category: 'motechat',
+        color: '#94CCC6',
+        defaults: {
+            event: { value: 'message' },
+            name: { value: 'onEvent' }
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: "onEvent.png",
+        label: function () {
+            return this.name || "onEvent";
+        }
+    });
+
+    RED.nodes.registerType('reEvent', {
+        category: 'motechat',
+        color: '#94CCC6',
+        defaults: {
+            name: { value: 'reEvent' },
+            errorCode: { value: 0 },
+            errorMsg: { value: 'OK' }
+        },
+        inputs: 1,
+        icon: "reEvent.png",
+        label: function () {
+            return this.name || "reEvent";
+        }
+    });
 </script>

@@ -1,0 +1,48 @@
+<script type="text/x-red" data-template-name="page">
+	<div class="form-row">
+		<label for="node-input-name"><i class="icon-tag"></i> Name</label>
+		<input type="text" id="node-input-name" placeholder="page">
+	</div>
+    <div class="form-row">
+		<label for="node-input-path"><i class="fa fa-tag"></i> Path</label>
+		<input type="text" id="node-input-path" placeholder=""/>
+	</div>
+</script>
+
+<script type="text/x-red" data-help-name="page">
+    <p>Motechat page node.</p>
+	<h3>Inputs</h3>
+		<dl class="message-properties">
+			<dt class="optional">name
+				<span class="property-type">string</span>
+			</dt>
+			<dd>The name of the node.</dd>
+			<dt class="optional">path
+				<span class="property-type">string</span>
+			</dt>
+			<dd>The path of the js file.</dd>
+		</dl>
+		
+	<h3>Outputs</h3>
+		<dl class="message-properties">
+            <dt class="optional">any 
+                <span class="property-type">any</span>
+            </dt>
+            <dd>The return value of js 
+		</dl>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('page', {
+        category: 'motechat',
+        color: '#E5BC9F',
+        defaults: {
+            name: { value: '' },
+            path: { value: '' }
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: "page.png",
+        label: () => this.name || "page"
+    });
+</script>

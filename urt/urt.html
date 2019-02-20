@@ -1,0 +1,47 @@
+<script type="text/x-red" data-template-name="urt">
+	<div class="form-row">
+		<label for="node-input-name"><i class="icon-tag"></i> Name</label>
+		<input type="text" id="node-input-name" placeholder="urt">
+	</div>
+</script>
+
+<script type="text/x-red" data-help-name="urt">
+    <p>Motechat urt node.</p>
+	<h3>Inputs</h3>
+		<dl class="message-properties">
+            <dt>urt
+				<span class="property-type">string</span>
+			</dt>
+            <dd>The urt of message.</dd>
+            <dt>context
+				<span class="property-type">object</span>
+			</dt>
+            <dd>The context of message that is a node-red context.</dd>
+            <dt>payload
+				<span class="property-type">object</span>
+			</dt>
+			<dd>The payload of message.</dd>
+			<dt class="optional">name
+				<span class="property-type">string</span>
+			</dt>
+			<dd>The name of the node.</dd>
+		</dl>
+		
+	<h3>Outputs</h3>
+		<dl class="message-properties">
+		</dl>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('urt', {
+        category: 'motechat',
+        color: '#BFE2ED',
+        defaults: {
+            name: { value: '' }
+        },
+        inputs: 1,
+        outputs: 2,
+        icon: "urt.png",
+        label: () => this.name || "urt"
+    });
+</script>

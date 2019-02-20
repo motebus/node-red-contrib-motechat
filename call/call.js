@@ -29,8 +29,8 @@ module.exports = function (RED) {
                         payload: reply
                     })
 
-                    node.send(reply[0].Reply.ErrCode == 0 ? [newMsg, null] : [null, newMsg])
-                }).catch(e => console.error(e))
+                    node.send([newMsg, null])
+                }).catch(err => node.send([null, err]))
             }
         })
     }
