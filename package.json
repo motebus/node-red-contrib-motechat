@@ -22,10 +22,12 @@
     "nodes": {
       "send": "send/send.js",
       "call": "call/call.js",
-      "event": "flow-event/flow-event.js"
+      "event": "flow-event/flow-event.js",
+      "urt": "urt/urt.js",
+      "page": "page/page.js"
     }
   },
-  "version": "0.1.15",
+  "version": "1.0.0",
   "license": "MIT",
   "engines": {
     "node": ">=8"
