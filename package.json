@@ -6,7 +6,7 @@
     "fs-extra": "^7.0.0",
     "level": "^4.0.0",
     "lodash": "^4.17.11",
-    "motechat": "1.4.5",
+    "motechat": "^1.4.7",
     "mqtt": "^2.18.8",
     "node-telegram-bot-api": "^0.30.0",
     "nodemailer": "^5.1.1"
@@ -20,10 +20,10 @@
   ],
   "node-red": {
     "nodes": {
+      "urt": "urt/urt.js",
       "send": "send/send.js",
       "call": "call/call.js",
       "event": "flow-event/flow-event.js",
-      "urt": "urt/urt.js",
       "page": "page/page.js"
     }
   },
