@@ -27,7 +27,7 @@
       "page": "page/page.js"
     }
   },
-  "version": "1.0.2",
+  "version": "1.0.3",
   "license": "MIT",
   "engines": {
     "node": ">=8"
