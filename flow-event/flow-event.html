@@ -36,10 +36,10 @@
 		</dl>
 </script>
 
-<script type="text/x-red" data-template-name="reEvent">
+<script type="text/x-red" data-template-name="retEvent">
     <div class="form-row">
         <label for="node-input-name"><i class="icon-tag"></i> Name</label>
-        <input type="text" id="node-input-name" placeholder="reEvent">
+        <input type="text" id="node-input-name" placeholder="retEvent">
     </div> 
     <div class="form-row">
         <label for="node-input-errorCode"><i class="fa fa-long-arrow-left"></i>Error Code</label>
@@ -51,8 +51,8 @@
     </div>
 </script>
 
-<script type="text/x-red" data-help-name="reEvent">
-    <p>motechat reEvent node</p>
+<script type="text/x-red" data-help-name="retEvent">
+    <p>motechat retEvent node</p>
 	
 	<h3>Inputs</h3>
 		<dl class="message-properties">
@@ -63,11 +63,11 @@
 			<dt class="optional"> error code
 				<span class="property-type">number</span>
 			</dt>
-			<dd>Set the motecaht reEvent error code</dd>
+			<dd>Set the motecaht retEvent error code</dd>
             <dt class="optional"> error message
 				<span class="property-type">string</span>
 			</dt>
-			<dd>Set the motecaht reEvent error message</dd>
+			<dd>Set the motecaht retEvent error message</dd>
         </dl>
 </script>
 
@@ -87,18 +87,18 @@
         }
     });
 
-    RED.nodes.registerType('reEvent', {
+    RED.nodes.registerType('retEvent', {
         category: 'motechat',
         color: '#94CCC6',
         defaults: {
-            name: { value: 'reEvent' },
+            name: { value: 'retEvent' },
             errorCode: { value: 0 },
             errorMsg: { value: 'OK' }
         },
         inputs: 1,
-        icon: "reEvent.png",
+        icon: "retEvent.png",
         label: function () {
-            return this.name || "reEvent";
+            return this.name || "retEvent";
         }
     });
 </script>

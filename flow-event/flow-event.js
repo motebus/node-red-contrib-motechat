@@ -42,5 +42,5 @@ module.exports = function (RED) {
             msg.mcBack({ errorCode, errorMsg, data: msg.payload })
         })
     }
-    RED.nodes.registerType("reEvent", flowReEvent)
+    RED.nodes.registerType("retEvent", flowReEvent)
 }
