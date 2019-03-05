@@ -3,16 +3,16 @@ const token = '641293137:AAEMygWqGwJoomjJ5Pd5zsYE_kxeqHu-3E0'
 const bot = new TelegramBot(token, { polling: false })
 
 const sender = {
-    message: bot.sendMessage,
-    photo: bot.sendPhoto,
-    audio: bot.sendAudio,
+    message: (chatId, content, option) => bot.sendMessage(chatId, content, option),
+    photo: (chatId, content, option) => bot.sendPhoto(chatId, content, option),
+    audio: (chatId, content, option) => bot.sendAudio(chatId, content, option),
     location: (chatId, content, option) => bot.sendLocation(
         chatId,
         content.latitude,
         content.longitude,
         option
     ),
-    video: bot.sendVideo,
+    video: (chatId, content, option) => bot.sendVideo(chatId, content, option),
     contact: (chatId, content, option) => bot.sendContact(
         chatId,
         content.phoneNumber,
