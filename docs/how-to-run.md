@@ -16,10 +16,11 @@
 3. Run the MoteBus program
 
    Download here
-   https://github.com/MoteChat/motebus/releases
+   https://github.com/motebus/motebus/releases/tag/v2.1.4
 
    ```bash
-   ./BusStack_Win32.exe
+   ./mbStack_W64.exe
+
    ```
 
 4. Finally, run node-red
