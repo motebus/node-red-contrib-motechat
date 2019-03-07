@@ -3,6 +3,11 @@
 		<label for="node-input-name"><i class="icon-tag"></i> Name</label>
 		<input type="text" id="node-input-name" placeholder="urt">
 	</div>
+
+	<div class="form-row">
+        <label for="node-input-topic"><i class="fa fa-tag"></i> Topic</label>
+        <input type="text" id="node-input-topic" placeholder=""/>
+    </div>
 </script>
 
 <script type="text/x-red" data-help-name="urt">
@@ -42,6 +47,8 @@
         inputs: 1,
         outputs: 2,
         icon: "urt.png",
-        label: () => this.name || "urt"
+        label: function() {
+			return this.name || "urt"
+		}
     });
 </script>

@@ -7,6 +7,10 @@ module.exports = (RED) => {
         RED.nodes.createNode(this, config)
         const node = this
         node.on('input', msg => {
+            if (typeof msg.urt !== 'string' && msg.urt === '' ) {
+                msg.urt = config.topic
+            }
+
             const { topic, to } = toUrt(msg.urt)
             const { payload, context } = msg
             service(context, topic, to, payload).then(

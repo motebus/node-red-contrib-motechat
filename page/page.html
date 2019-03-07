@@ -33,16 +33,18 @@
 </script>
 
 <script type="text/javascript">
-    RED.nodes.registerType('page', {
-        category: 'motechat',
-        color: '#E5BC9F',
-        defaults: {
-            name: { value: '' },
-            path: { value: '' }
-        },
-        inputs: 1,
-        outputs: 1,
-        icon: "page.png",
-        label: () => this.name || "page"
-    });
+	RED.nodes.registerType('page', {
+		category: 'motechat',
+		color: '#E5BC9F',
+		defaults: {
+			name: { value: '' },
+			path: { value: '' }
+		},
+		inputs: 1,
+		outputs: 1,
+		icon: "page.png",
+		label: function () {
+			return this.name || "page"
+		}
+	});
 </script>
