@@ -10,7 +10,9 @@ module.exports = function (RED) {
         let node = this
 
         node.on('input', msg => {
-            let [topic, func, name] = [
+
+            let [DDN, topic, func, name] = [
+                msg.DDN || config.DDN,
                 msg.topic || config.topic,
                 msg.func || config.func,
                 config.name
@@ -21,17 +23,16 @@ module.exports = function (RED) {
                 return
             }
 
-            if (topic && topic != '') {
-                caller.call(topic, func, msg.payload, name).then(reply => {
-                    let newMsg = Object.assign(msg, {
-                        hostDDN: getDDN(),
-                        name: name,
-                        payload: reply
-                    })
 
-                    node.send([newMsg, null])
-                }).catch(err => node.send([null, err]))
-            }
+            caller.call(topic, DDN, func, msg.payload).then(reply => {
+                let newMsg = Object.assign(msg, {
+                    hostDDN: getDDN(),
+                    name: name,
+                    payload: reply
+                })
+
+                node.send([newMsg, null])
+            }).catch(err => node.send([null, err]))
         })
     }
     RED.nodes.registerType("call", call)

@@ -9,26 +9,17 @@ module.exports = function (RED) {
         RED.nodes.createNode(this, config)
         let node = this
 
-        node.topicList = (config.topic != '') ? [config.topic] : []
-
+        let { topic } = config
         node.name = config.name
-        node.subject = config.subject
         node.on('input', msg => {
-            console.log('node: ', node)
-            console.log('send msg : ', msg)
-
-            let tarList = node.topicList
-            if (msg.topic && Array.isArray(msg.topic)) {
-                tarList = msg.topic.filter(item => item != '')
-                // tarList = msg.topic.map(item => ({ topic: item }))
-            }
-
-            if (msg.topic && typeof msg.topic === 'string') {
-                tarList = [msg.topic]
-            }
-
-            tarList.forEach(topic => {
-                sender.send(topic, msg.payload, node.name).then(reply => {
+            
+            let DDN = msg.DDN || config.DDN 
+            DDN = Array.isArray(DDN) ? DDN : [DDN]
+            DDN = DDN.filter(item => item)
+            let tarList = DDN
+           
+            tarList.forEach(target => {
+                sender.send(topic, target, msg.payload).then(reply => {
                     let newMsg = Object.assign(msg, {
                         hostDDN: getDDN(),
                         name: node.name,

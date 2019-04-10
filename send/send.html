@@ -4,6 +4,11 @@
         <input type="text" id="node-input-name" placeholder="sender">
     </div>
 
+	<div class="form-row">
+        <label for="node-input-DDN"><i class="fa fa-tag"></i> DDN</label>
+        <input type="text" id="node-input-DDN" placeholder=""/>
+    </div>
+
     <div class="form-row">
         <label for="node-input-topic"><i class="fa fa-tag"></i> Topic</label>
         <input type="text" id="node-input-topic" placeholder=""/>
@@ -15,6 +20,7 @@
         category: 'motechat',
         color: '#A5C2DB',
         defaults: {
+			DDN: {value: '' }, 
             topic: { value: '' },
             name: { value: 'send' },
         },
@@ -35,19 +41,19 @@
 				<span class="property-type">string | json object</span>
             </dt>
             <dd>The payload of message to send to the topics</dd>
-            <dt>topics
-				<span class="property-type">array</span>
+            <dt>topic
+				<span class="property-type">string</span>
 			</dt>
-			<dd>The topics of message that want to send.</dd>
+			<dd>The topic of message that want to send.</dd>
 			<dt class="optional">name
 				<span class="property-type">string</span>
 			</dt>
 			<dd>The name of the node</dd>
-			<dt>topics
+			<dt> DDN
 				<span class="property-type">string</span>
 			</dt>
 			<dd>
-				The topics that want to send. They will be set to the topics' DDN.
+				The DDN that want to send.
 			</dd>
 		</dl>
 	

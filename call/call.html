@@ -3,6 +3,10 @@
 		<label for="node-input-name"><i class="icon-tag"></i> Name</label>
 		<input type="text" id="node-input-name" placeholder="caller">
 	</div>
+	<div class="form-row">
+		<label for="node-input-DDN"><i class="icon-tag"></i> DDN</label>
+		<input type="text" id="node-input-DDN" placeholder="">
+	</div>
     <div class="form-row">
 		<label for="node-input-topic"><i class="fa fa-tag"></i> Topic</label>
 		<input type="text" id="node-input-topic" placeholder=""/>
@@ -14,21 +18,22 @@
 </script>
 
 <script type="text/javascript">
-    RED.nodes.registerType('call', {
-        category: 'motechat',
-        color: '#A5C2DB',
-        defaults: {
-            name: { value: '' },
-            topic: { value: '' },
-            func: { value: '' }
-        },
-        inputs: 1,
-        outputs: 2,
-        icon: "call.png",
-        label: function () {
-            return this.name || "call";
-        }
-    });
+	RED.nodes.registerType('call', {
+		category: 'motechat',
+		color: '#A5C2DB',
+		defaults: {
+			name: { value: '' },
+			DDN: { value: '' },
+			topic: { value: '' },
+			func: { value: '' }
+		},
+		inputs: 1,
+		outputs: 2,
+		icon: "call.png",
+		label: function () {
+			return this.name || "call";
+		}
+	});
 </script>
 
 <script type="text/x-red" data-help-name="call">
@@ -43,10 +48,14 @@
 				<span class="property-type">string</span>
 			</dt>
 			<dd>The name of the node.</dd>
+			<dt class="optional">DDN
+				<span class="property-type">string</span>
+			</dt>
+			<dd>The DDN.</dd>
 			<dt class="optional">topic
 				<span class="property-type">string</span>
 			</dt>
-			<dd>The topic that be called. It will be set to its DDN.</dd>
+			<dd>The topic.</dd>
 			<dt class="optional"> function
 				<span class="property-type">string</span>
 			</dt>

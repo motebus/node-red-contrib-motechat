@@ -889,10 +889,10 @@ motebus@^1.0.9:
   resolved "https://registry.yarnpkg.com/motebus/-/motebus-1.0.9.tgz#b931cc67b3fb21abb90b28b0a7745eedb6b49a06"
   integrity sha512-6ug234DZMCZrUT7D//wNieEE2Se3qN91nRF/lh+idZ0BYuBmulyf03gJM3nNdI3LiEcc3LfKaVWr5pE5I2FXPw==
 
-motechat@1.4.5:
-  version "1.4.5"
-  resolved "https://registry.yarnpkg.com/motechat/-/motechat-1.4.5.tgz#a1edf3682db690ed85be672a2f45016f4bd59dcd"
-  integrity sha512-2dlpq06/Vv88UlZh5gDpkF65buoZmiORWfTyDsmmtRe6vLX4fdclQHVuCGTFqH8wcXccYv2ZiNnwGJuMX3oKcg==
+motechat@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/motechat/-/motechat-1.5.0.tgz#87f9296df611aea03ab8f489a78a63938e5ef92c"
+  integrity sha512-hf47l5ar1lLQvw/741TQ8eEqEO6LfOED076gJNETgU9Lk9lkDnmORe0mimiry5Hjpn/9bMjIqVtdjws+OUBXGw==
   dependencies:
     motebus "^1.0.9"
 
