@@ -5,6 +5,11 @@
 	</div>
 
 	<div class="form-row">
+        <label for="node-input-DDN"><i class="fa fa-tag"></i> DDN</label>
+        <input type="text" id="node-input-DDN" placeholder=""/>
+    </div>
+
+	<div class="form-row">
         <label for="node-input-topic"><i class="fa fa-tag"></i> Topic</label>
         <input type="text" id="node-input-topic" placeholder=""/>
     </div>
@@ -42,6 +47,8 @@
         category: 'motechat',
         color: '#BFE2ED',
         defaults: {
+			DDN: {value: '' }, 
+			topic: { value: '' },
             name: { value: '' }
         },
         inputs: 1,
