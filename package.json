@@ -29,7 +29,7 @@
       "page": "page/page.js"
     }
   },
-  "version": "1.0.15",
+  "version": "1.0.16",
   "license": "MIT",
   "engines": {
     "node": ">=8"
