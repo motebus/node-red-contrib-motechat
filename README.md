@@ -24,8 +24,10 @@ Node| Description |
 
 ### Examples On Node-Red
  **Overall Flow** <br />
- Grab { Inject Node } From Input <br />
- Grab { Send Node } From Motechat <br />
+Grab { Inject Node } From Input <br />
+Grab { Send Node } From Motechat <br />
+DDN section can input other device's DDN or its EI_NAME <br />
+ 
 <img src="/node-red-examples/sendnodes.png" width="400">
 
 **Send Node Info** <br />
@@ -37,6 +39,8 @@ Node| Description |
 **Result** <br />
 From Other Device's Terminal <br />
 <img src="/node-red-examples/result.jpg" width="400">
+
+
 
 
 
