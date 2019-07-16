@@ -24,30 +24,30 @@ Node| Description |
 
 ### Examples On Node-Red
 **Overall Flow for Send Node** <br />
-Grab { Inject Node } from Input <br />
-Grab { Send Node } from Motechat <br />
+...Grab { Inject Node } from Input <br />
+...Grab { Send Node } from Motechat <br />
  
-<img src="/node-red-examples/sendflow.png" width="300">
+...<img src="/node-red-examples/sendflow.png" width="300">
 
-**Send Node Info** <br />
-DDN section can input other device's DDN or its EI_NAME <br />
-<img src="/node-red-examples/sendnodes.info.png" width="300">
+...**Send Node Info** <br />
+...DDN section can input other device's DDN or its EI_NAME <br />
+...<img src="/node-red-examples/sendnodes.info.png" width="300">
 
-**Inject Node Ino** <br />
-<img src="/node-red-examples/InjectSendNode.png" width="300">
+...**Inject Node Ino** <br />
+...<img src="/node-red-examples/InjectSendNode.png" width="300">
 
-**Result** <br />
-From Other Device's Terminal <br />
-<img src="/node-red-examples/result.jpg" width="300">
+...**Result** <br />
+...From Other Device's Terminal <br />
+...<img src="/node-red-examples/result.jpg" width="300">
 
-**Debug Flow**  <br />
-In order to read signals from other devices  <br />
-Grab { Debug Node } from Output  <br />
-Grab { OnEvent Node } from motechat <br />
-<img src="/node-red-examples/DebubFlow.png" width="300">
+**Debug Flow. Using OnEvent**  <br />
+...In order to read signals from other devices  <br />
+...Grab { Debug Node } from Output  <br />
+...Grab { OnEvent Node } from motechat <br />
+...<img src="/node-red-examples/DebubFlow.png" width="300">
 
-**Debug Node Info** <br />
-<img src="/node-red-examples/DebugNode.png" width="300">
+...**Debug Node Info** <br />
+...<img src="/node-red-examples/DebugNode.png" width="300">
 
 
 
