@@ -2,16 +2,25 @@
 
 ### Install
 
-1. Ensure Node (v12.5 or above) or NPM (v6.0 or above) installed
-2. Navigate to Node-Red folder first
+1. Ensure Node (v12.5 or above)
+2. Ensure NPM (v6.0 or above) installed
+3. Navigate to Node-Red folder first
 ```bash
 cd ~/.node-red 
 ```
-3. Then install node-red-contrib-motechat
+4. Then install node-red-contrib-motechat
 ```bash
 npm install node-red-contrib-motechat
 ```
-[Get Started](docs/how-to-run.md)
+5. Download Sphere (must download to use motechat)
+
+- Use Snapd (only Linux)
+```bash
+sudo snap install sphere
+```
+- [Other Environment](https://gitbook.ypcloud.com/sphere-s-user-s-guide/sphere-setup/untitled)
+
+6. [Additional Info](docs/how-to-run.md)
 
 ### Simple Motechat Samples
 
