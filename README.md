@@ -3,7 +3,7 @@
 ### Install
 
 1. Ensure Node (v12.5 or above)
-2. Ensure NPM (v6.0 or above) installed
+2. Ensure NPM (v6.0 or above)
 3. Navigate to Node-Red folder first
 ```bash
 cd ~/.node-red 
