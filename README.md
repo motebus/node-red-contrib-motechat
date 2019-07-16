@@ -27,7 +27,7 @@ Node| Description |
 Grab { Inject Node } from Input <br />
 Grab { Send Node } from Motechat <br />
  
-<img src="/node-red-examples/sendnodes.png" width="300">
+<img src="/node-red-examples/sendflow.png" width="300">
 
 **Send Node Info** <br />
 DDN section can input other device's DDN or its EI_NAME <br />
@@ -39,6 +39,13 @@ DDN section can input other device's DDN or its EI_NAME <br />
 **Result** <br />
 From Other Device's Terminal <br />
 <img src="/node-red-examples/result.jpg" width="300">
+
+**Debug Flow**  <br />
+In order to read signals from other devices  <br />
+<img src="/node-red-examples/debugflow.png" width="300">
+
+**Debug Node Info** <br />
+<img src="/node-red-examples/debuginfo.png" width="300">
 
 
 
