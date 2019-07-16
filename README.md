@@ -24,17 +24,18 @@ Node| Description |
 
 ### Examples On Node-Red
 
-#### Overall Flow.
-Grab { Inject Node }. Grab { Send Node } From Motechat <br />
+ **Overall Flow**
+ Grab { Inject Node } From Input <br />
+ Grab { Send Node } From Motechat <br />
 <img src="/node-red-examples/sendnodes.png" width="400">
 
-#### Send Node Info
+**Send Node Info**
 <img src="/node-red-examples/sendnodes.info.png" width="400">
 
-#### Inject Node Ino
+**Inject Node Ino**
 <img src="/node-red-examples/InjectSendNode.png" width="400">
 
-#### Result
+**Result**
 From Other Device's Terminal <br />
 <img src="/node-red-examples/result.jpg" width="400">
 
