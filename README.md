@@ -25,6 +25,7 @@ Node| Description |
 ### Examples On Node-Red
 
 Overall Flow. Grab { Inject Node }. Grab { Send Node } From Motechat
+<img src="/node-red-examples/sendnodes.png" width="250">
 ![ Overall Flow ](/node-red-examples/sendnodes.png |width=250)
 
 Send Node Info
