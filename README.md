@@ -5,13 +5,13 @@
 ```bash
 npm install node-red-contrib-motechat
 ```
+[Get Started](docs/how-to-run.md)
 
-
-### Simple Motechat Samples on Node-Red
+### Simple Motechat Samples
 
  <https://github.com/motebus/motechat>
 
-The above link provides 6 examples to help you develop your uBots. <br />
+The above link provides 6 examples to help you develop your uBots in JavaScript. <br />
 It explains and shows samples for send, call, urt, onEvent, retEvent, and Page.
 
 Node| Description | 
@@ -22,5 +22,10 @@ Node| Description |
 *retEvent* | upon onEvent, tells the sender if the device has made an action |
 *page* | allows the user a way to attach/upload a JavaScript file in order for them to work conveniently |
 
-[Get Started](docs/how-to-run.md)
+### Examples On Node-Red
+
+
+
+
+
 
