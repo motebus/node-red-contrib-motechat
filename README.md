@@ -24,8 +24,8 @@ Node| Description |
 
 ### Examples On Node-Red
  **Overall Flow** <br />
-Grab { Inject Node } From Input <br />
-Grab { Send Node } From Motechat <br />
+Grab { Inject Node } from Input <br />
+Grab { Send Node } from Motechat <br />
  
 <img src="/node-red-examples/sendnodes.png" width="400">
 
