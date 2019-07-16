@@ -7,7 +7,7 @@ npm install node-red-contrib-motechat
 ```
 
 
-### The simple motechat functionality in node-red.
+### Simple Motechat Samples on Node-Red
 
  <https://github.com/motebus/motechat>
 
