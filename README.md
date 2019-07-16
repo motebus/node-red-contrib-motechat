@@ -6,11 +6,13 @@
 npm install node-red-contrib-motechat
 ```
 
-The simple motechat functionality in node-red.
+
+### The simple motechat functionality in node-red.
 
  <https://github.com/motebus/motechat>
 
-The above link provides 6 examples to help you develop your uBots. It displays send, call, urt, onEvent, retEvent, and Page.
+The above link provides 6 examples to help you develop your uBots.
+It explains and shows samples for send, call, urt, onEvent, retEvent, and Page.
 
 Node| Description | 
 --- | --- | 
