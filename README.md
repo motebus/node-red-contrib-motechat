@@ -2,6 +2,12 @@
 
 ### Install
 
+1. Ensure Node (v12.5 or above) or NPM (v6.0 or above) installed
+2. Navigate to Node-Red folder first
+```bash
+cd ~/.node-red 
+```
+3. Then install node-red-contrib-motechat
 ```bash
 npm install node-red-contrib-motechat
 ```
