@@ -42,7 +42,7 @@ From Other Device's Terminal <br />
 
 **Debug Flow**  <br />
 In order to read signals from other devices  <br />
-<img src="/node-red-examples/DebugFlow.png" width="300">
+<img src="/node-red-examples/DebubFlow.png" width="300">
 
 **Debug Node Info** <br />
 <img src="/node-red-examples/DebugNode.png" width="300">
