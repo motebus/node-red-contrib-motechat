@@ -28,13 +28,13 @@ Overall Flow. Grab { Inject Node }. Grab { Send Node } From Motechat <br />
 <img src="/node-red-examples/sendnodes.png" width="400">
 
 Send Node Info <br />
-![ Send Node Info](/node-red-examples/sendnodes.info.png |width=300)
+<img src="/node-red-examples/sendnodes.info.png" width="400">
 
 Inject Node Ino <br />
-![ Inject Node Info](/node-red-examples/InjectSendNode.png |width=300)
+<img src="/node-red-examples/InjectSendNode.png" width="400">
 
 Result From Other Device's Terminal <br />
-![ Result ](/node-red-examples/result.jpg)
+<img src="/node-red-examples/result.jpg" width="400">
 
 
 
