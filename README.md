@@ -23,22 +23,23 @@ Node| Description |
 *page* | allows the user a way to attach/upload a JavaScript file in order for them to work conveniently |
 
 ### Examples On Node-Red
- **Overall Flow** <br />
+**Overall Flow for Send Node** <br />
 Grab { Inject Node } from Input <br />
 Grab { Send Node } from Motechat <br />
  
-<img src="/node-red-examples/sendnodes.png" width="400">
+<img src="/node-red-examples/sendnodes.png" width="300">
 
 **Send Node Info** <br />
 DDN section can input other device's DDN or its EI_NAME <br />
-<img src="/node-red-examples/sendnodes.info.png" width="400">
+<img src="/node-red-examples/sendnodes.info.png" width="300">
 
 **Inject Node Ino** <br />
-<img src="/node-red-examples/InjectSendNode.png" width="400">
+<img src="/node-red-examples/InjectSendNode.png" width="300">
 
 **Result** <br />
 From Other Device's Terminal <br />
-<img src="/node-red-examples/result.jpg" width="400">
+<img src="/node-red-examples/result.jpg" width="300">
+
 
 
 
