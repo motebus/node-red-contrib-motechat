@@ -23,19 +23,18 @@ Node| Description |
 *page* | allows the user a way to attach/upload a JavaScript file in order for them to work conveniently |
 
 ### Examples On Node-Red
-
- **Overall Flow**
+ **Overall Flow** <br />
  Grab { Inject Node } From Input <br />
  Grab { Send Node } From Motechat <br />
 <img src="/node-red-examples/sendnodes.png" width="400">
 
-**Send Node Info**
+**Send Node Info** <br />
 <img src="/node-red-examples/sendnodes.info.png" width="400">
 
-**Inject Node Ino**
+**Inject Node Ino** <br />
 <img src="/node-red-examples/InjectSendNode.png" width="400">
 
-**Result**
+**Result** <br />
 From Other Device's Terminal <br />
 <img src="/node-red-examples/result.jpg" width="400">
 
