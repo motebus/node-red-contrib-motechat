@@ -11,7 +11,7 @@ npm install node-red-contrib-motechat
 
  <https://github.com/motebus/motechat>
 
-The above link provides 6 examples to help you develop your uBots.
+The above link provides 6 examples to help you develop your uBots. <br />
 It explains and shows samples for send, call, urt, onEvent, retEvent, and Page.
 
 Node| Description | 
