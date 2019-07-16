@@ -25,13 +25,13 @@ Node| Description |
 ### Examples On Node-Red
 
 Overall Flow. Grab { Inject Node }. Grab { Send Node } From Motechat
-![ Overall Flow ](/node-red-examples/sendnodes.png | width=250)
+![ Overall Flow ](/node-red-examples/sendnodes.png |width=250)
 
 Send Node Info
-![ Send Node Info](/node-red-examples/sendnodes.info.png | width=300)
+![ Send Node Info](/node-red-examples/sendnodes.info.png |width=300)
 
 Inject Node Ino
-![ Inject Node Info](/node-red-examples/InjectSendNode.png | width=300)
+![ Inject Node Info](/node-red-examples/InjectSendNode.png |width=300)
 
 Result From Other Device's Terminal
 ![ Result ](/node-red-examples/result.jpg)
