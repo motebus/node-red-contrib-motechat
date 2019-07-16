@@ -42,6 +42,8 @@ From Other Device's Terminal <br />
 
 **Debug Flow**  <br />
 In order to read signals from other devices  <br />
+Grab { Debug Node } from Output  <br />
+Grab { OnEvent Node } from motechat <br />
 <img src="/node-red-examples/DebubFlow.png" width="300">
 
 **Debug Node Info** <br />
