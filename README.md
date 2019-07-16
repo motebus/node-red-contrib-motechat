@@ -10,8 +10,9 @@ cd ~/.node-red
 ```
 4. Then install node-red-contrib-motechat
 ```bash
-npm install node-red-contrib-motechat
+npm install --unsafe-perm node-red-contrib-motechat
 ```
+cannot install outside node-red folder
 5. Download Sphere (must download to use motechat)
 
 - Use Snapd (only Linux)
