@@ -13,7 +13,7 @@
    npm install --save node-red-contrib-motechat
    ```
    
-   [For Linux, Raspberry Pi](https://gitbook.ypcloud.com/sphere-s-user-s-guide/sphere-setup/untitled)
+   [Running on Linux or Raspberry Pi](https://gitbook.ypcloud.com/sphere-s-user-s-guide/sphere-setup/untitled)
 
 3. Run the MoteBus program
 
