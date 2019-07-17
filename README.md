@@ -14,12 +14,11 @@ npm install --unsafe-perm node-red-contrib-motechat
 ```
 cannot install outside node-red folder
 5. Download Sphere (must download to use motechat)
-
-- Use Snapd (only Linux)
+ - Use Snapd (only Linux)
 ```bash
 sudo snap install sphere
 ```
-- [Other Environment](https://gitbook.ypcloud.com/sphere-s-user-s-guide/sphere-setup/untitled)
+ - [Other Environment](https://gitbook.ypcloud.com/sphere-s-user-s-guide/sphere-setup/untitled)
 
 6. [Additional Info](docs/how-to-run.md)
 
