@@ -64,11 +64,11 @@ Node| Description |
 >><img src="/node-red-examples/DebugNode.png" width="300"> <br />
 
 #### Send Email, Text
-
+>>Grab {Inject Node} and {Send Node} <br />
 DDN | Topic | Payload | Notes |
 --- | --- | --- | --- |
 *>>COMM* | email://your_email@test.com | {"subject":"xxxxx","content":"xxxxx" } | Send Email via comm |
-*>>COMM* | sms://TaiwaneseCellPhone | {"text":"xxxxxxxxxxx"} | Send a text via Comm |
+*>>COMM* | sms://TaiwaneseCellPhone | {"text":"xxxxxxxxxxx"} | Send Text via Comm |
 
 COMM is written by YPCloud Inc. It provides several utilities to inspire developers around the world to develop in motebus environment. 
 
