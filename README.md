@@ -12,7 +12,8 @@ cd ~/.node-red
 ```bash
 npm install --unsafe-perm node-red-contrib-motechat
 ```
-cannot install outside node-red folder <br />
+cannot install outside node-red folder
+
 5. Download Sphere (must download to use motechat)
  - Use Snapd (only Linux)
 ```bash
