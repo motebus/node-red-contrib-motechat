@@ -54,7 +54,7 @@ Node| Description |
 >>From Other Device's Terminal <br />
 >><img src="/node-red-examples/result.jpg" width="300"> <br />
 
-#### On Event
+#### On Event. Debug
 >>**Debug Flow. Using OnEvent**  <br /> 
 >>In order to read signals from other devices  <br />
 >>Grab { Debug Node } from Output  <br />
@@ -62,6 +62,16 @@ Node| Description |
 >><img src="/node-red-examples/DebubFlow.png" width="300"> <br />
 >>**Debug Node Info** <br />
 >><img src="/node-red-examples/DebugNode.png" width="300"> <br />
+
+#### Send Email, Text
+
+DDN | Topic | Payload | Notes |
+--- | --- | --- | --- |
+*>>COMM* | email://your_email@test.com | {"subject":"xxxxx","content":"xxxxx" } | Send Email via comm |
+*>>COMM* | sms://TaiwaneseCellPhone | {"text":"xxxxxxxxxxx"} | Send a text via Comm |
+
+COMM is written by YPCloud Inc. It provides several utilities to inspire developers around the world to develop in motebus environment. 
+
 
 
 
