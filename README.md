@@ -64,7 +64,6 @@ Node| Description |
 >><img src="/node-red-examples/DebugNode.png" width="300"> <br />
 
 #### Send Email, Text
-Grab {Inject Node} and {Send Node}
 DDN | Topic | Payload | Notes |
 --- | --- | --- | --- |
 *>>COMM* | email://your_email@test.com | {"subject":"xxxxx","content":"xxxxx" } | Send Email via comm |
