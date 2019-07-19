@@ -23,21 +23,6 @@ sudo snap install sphere
 
 6. [Additional Info](docs/how-to-run.md)
 
-### Simple Motechat Samples
-
- <https://github.com/motebus/motechat>
-
-The above link provides 6 examples to help you develop your uBots in JavaScript. <br />
-It explains and shows samples for send, call, urt, onEvent, retEvent, and Page.
-
-Node| Description | 
---- | --- | 
-*send* | sending messages to telegram with chat-id being fully customizable |
-*call* | similar to send, but has an input for a function, able to obtain the output that the function desires |
-*onEvent* | wait until recieve a signal and read the signal |
-*retEvent* | upon onEvent, tells the sender if the device has made an action |
-*page* | allows the user a way to attach/upload a JavaScript file in order for them to work conveniently |
-
 ### Examples On Node-Red
 
 #### Send 
@@ -70,6 +55,21 @@ DDN | Topic | Payload | Notes |
 *>>COMM* | sms://TaiwaneseCellPhone | {"text":"xxxxxxxxxxx"} | Send Text via Comm |
 
 COMM is written by YPCloud Inc. It provides several utilities to inspire developers around the world to develop in motebus environment. 
+
+### Simple Motechat Samples
+
+ <https://github.com/motebus/motechat>
+
+The above link provides 6 examples to help you develop your uBots in JavaScript. <br />
+It explains and shows samples for send, call, urt, onEvent, retEvent, and Page.
+
+Node| Description | 
+--- | --- | 
+*send* | sending messages to telegram with chat-id being fully customizable |
+*call* | similar to send, but has an input for a function, able to obtain the output that the function desires |
+*onEvent* | wait until recieve a signal and read the signal |
+*retEvent* | upon onEvent, tells the sender if the device has made an action |
+*page* | allows the user a way to attach/upload a JavaScript file in order for them to work conveniently |
 
 
 
