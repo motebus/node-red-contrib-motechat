@@ -2,7 +2,7 @@
 
 ### Install
 
-1. Ensure Node (v12.5 or above)
+1. Ensure Node (between v8.0 - v12.5)
 2. Ensure NPM (v6.0 or above)
 3. Navigate to Node-Red folder first
 ```bash
