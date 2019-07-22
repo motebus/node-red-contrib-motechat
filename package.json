@@ -2,7 +2,7 @@
   "name": "node-red-contrib-motechat",
   "description": "motechat for node-red",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "fs-extra": "^7.0.0",
     "level": "^4.0.0",
     "lodash": "^4.17.13",
