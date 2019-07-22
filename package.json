@@ -5,7 +5,7 @@
     "axios": "^0.18.0",
     "fs-extra": "^7.0.0",
     "level": "^4.0.0",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.13",
     "motechat": "^1.5.7",
     "mqtt": "^2.18.8",
     "node-telegram-bot-api": "^0.30.0",
