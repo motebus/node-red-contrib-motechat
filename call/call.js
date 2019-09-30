@@ -1,4 +1,4 @@
-module.exports = function (RED) {
+module.exports = function(RED) {
     "use strict"
     let caller = {
         call: require('../lib/mcClient.js').call
@@ -9,7 +9,8 @@ module.exports = function (RED) {
         RED.nodes.createNode(this, config)
         let node = this
 
-        node.on('input', msg => {
+        node.on('input', (msg, send, done) => {
+            send = send || function() { node.send.apply(node, arguments) }
 
             let [DDN, topic, func, name] = [
                 msg.DDN || config.DDN,
@@ -23,16 +24,16 @@ module.exports = function (RED) {
                 return
             }
 
-
             caller.call(topic, DDN, func, msg.payload).then(reply => {
-                let newMsg = Object.assign(msg, {
-                    hostDDN: getDDN(),
-                    name: name,
-                    payload: reply
-                })
+                    let newMsg = Object.assign(msg, {
+                        hostDDN: getDDN(),
+                        name: name,
+                        payload: reply
+                    })
 
-                node.send([newMsg, null])
-            }).catch(err => node.send([null, err]))
+                    send([newMsg, null])
+                }).catch(err => send([null, err]))
+                .finally(() => { if (done) done() })
         })
     }
     RED.nodes.registerType("call", call)

@@ -1,4 +1,4 @@
-module.exports = function (RED) {
+module.exports = function(RED) {
     "use strict"
     let sender = {
         send: require('../lib/mcClient.js').send
@@ -11,14 +11,16 @@ module.exports = function (RED) {
 
         let { topic } = config
         node.name = config.name
-        node.on('input', msg => {
-            
-            let DDN = msg.DDN || config.DDN 
+        node.on('input', (msg, send, done) => {
+            send = send || function() { node.send.apply(node, arguments) }
+
+            let DDN = msg.DDN || config.DDN
             DDN = Array.isArray(DDN) ? DDN : [DDN]
             DDN = DDN.filter(item => item)
             let tarList = DDN
-           
-            tarList.forEach(target => {
+            let length = tarList.length
+
+            tarList.forEach((target, index) => {
                 sender.send(topic, target, msg.payload).then(reply => {
                     let newMsg = Object.assign(msg, {
                         hostDDN: getDDN(),
@@ -28,8 +30,10 @@ module.exports = function (RED) {
                         subject: node.subject
                     })
 
-                    node.send([newMsg, null])
-                }).catch(err => node.send([null, err]))
+                    send([newMsg, null])
+                }).catch(err => send([null, err]))
+
+                if (length == index && done) done()
             })
         })
     }

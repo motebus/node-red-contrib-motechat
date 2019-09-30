@@ -1,14 +1,16 @@
 const path = require('path')
 module.exports = (RED) => {
 
-    function page(config){
+    function page(config) {
         RED.nodes.createNode(this, config)
         const node = this
         const { path: jsPath } = config
         const correctPath = path.isAbsolute(jsPath) ?
             jsPath : path.resolve(jsPath)
 
-        node.on('input', msg => {
+        node.on('input', (msg, send, done) => {
+            send = send || function() { node.send.apply(node, arguments) }
+
             try {
                 const exec = require(correctPath)
                 if (typeof exec !== 'function') {
@@ -16,8 +18,10 @@ module.exports = (RED) => {
                     node.error('NOT_FUNCTION')
                     return
                 }
-                node.send(exec(msg))
-            } catch(err) { node.error('REQUIRE_FAIL', err) }
+                send(exec(msg))
+            } catch (err) { node.error('REQUIRE_FAIL', err) } finally {
+                if (done) done()
+            }
         })
     }
     RED.nodes.registerType("page", page)
