@@ -1,38 +1,38 @@
 {
-  "name": "node-red-contrib-motechat",
-  "description": "motechat for node-red",
-  "dependencies": {
-    "axios": "^0.18.1",
-    "fs-extra": "^7.0.0",
-    "level": "^4.0.0",
-    "lodash": "^4.17.13",
-    "motechat": "^1.6.4",
-    "mqtt": "^2.18.8",
-    "node-telegram-bot-api": "^0.30.0",
-    "nodemailer": "^5.1.1",
-    "request": "^2.88.0",
-    "request-promise-native": "^1.0.7",
-    "yargs": "^13.2.4"
-  },
-  "keywords": [
-    "node-red",
-    "motechat",
-    "motebus",
-    "ultranet",
-    "ypcloud"
-  ],
-  "node-red": {
-    "nodes": {
-      "urt": "urt/urt.js",
-      "send": "send/send.js",
-      "call": "call/call.js",
-      "event": "flow-event/flow-event.js",
-      "page": "page/page.js"
+    "name": "node-red-contrib-motechat",
+    "description": "motechat for node-red",
+    "dependencies": {
+        "axios": "^0.18.1",
+        "fs-extra": "^7.0.0",
+        "level": "^4.0.0",
+        "lodash": "^4.17.13",
+        "motechat": "^1.6.4",
+        "mqtt": "^2.18.8",
+        "node-telegram-bot-api": "^0.30.0",
+        "nodemailer": "^5.1.1",
+        "request": "^2.88.0",
+        "request-promise-native": "^1.0.7",
+        "yargs": "^13.2.4"
+    },
+    "keywords": [
+        "node-red",
+        "motechat",
+        "motebus",
+        "ultranet",
+        "ypcloud"
+    ],
+    "node-red": {
+        "nodes": {
+            "urt": "urt/urt.js",
+            "send": "send/send.js",
+            "call": "call/call.js",
+            "event": "flow-event/flow-event.js",
+            "page": "page/page.js"
+        }
+    },
+    "version": "1.1.0",
+    "license": "MIT",
+    "engines": {
+        "node": ">=8"
     }
-  },
-  "version": "1.0.22",
-  "license": "MIT",
-  "engines": {
-    "node": ">=8"
-  }
 }
