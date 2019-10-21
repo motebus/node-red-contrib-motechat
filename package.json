@@ -6,7 +6,7 @@
         "fs-extra": "^7.0.0",
         "level": "^4.0.0",
         "lodash": "^4.17.13",
-        "motechat": "^1.6.4",
+        "motechat": "^1.6.8",
         "mqtt": "^2.18.8",
         "node-telegram-bot-api": "^0.30.0",
         "nodemailer": "^5.1.1",
