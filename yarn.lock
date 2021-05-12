@@ -954,6 +954,11 @@ locate-path@^3.0.0:
     p-locate "^3.0.0"
     path-exists "^3.0.0"
 
+lodash@^4.17.11:
+  version "4.17.21"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
+  integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
+
 lodash@^4.17.13:
   version "4.17.13"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.13.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
@@ -1026,22 +1031,22 @@ mkdirp@^0.5.1:
   dependencies:
     minimist "0.0.8"
 
-motebus@^1.0.9:
-  version "1.0.9"
-  resolved "https://registry.yarnpkg.com/motebus/-/motebus-1.0.9.tgz#b931cc67b3fb21abb90b28b0a7745eedb6b49a06"
-  integrity sha512-6ug234DZMCZrUT7D//wNieEE2Se3qN91nRF/lh+idZ0BYuBmulyf03gJM3nNdI3LiEcc3LfKaVWr5pE5I2FXPw==
+motebus@^2.0.0:
+  version "2.0.7"
+  resolved "https://registry.yarnpkg.com/motebus/-/motebus-2.0.7.tgz#2ae0e0d1cbfada4fdbad6f79425df782dea53d12"
+  integrity sha512-d+IOb5oXZfqLDtpCDhrE0Y5U2p9KRILXEmVQdFjsM/W4zofLPcYZAyVlSxtsocdcKFQl9AYdoEjLhIjUKQE+QA==
 
-motechat@^1.5.5:
-  version "1.5.5"
-  resolved "https://registry.yarnpkg.com/motechat/-/motechat-1.5.5.tgz#9d1077accfb28561f2289000dbde8deb77baaaa5"
-  integrity sha512-+dZBUgwUlXomnPF+87ZfFyNMbdfOeqpeug9IhT8e9Qqh81XiHlB8JBDkWuCaA7gRvYjQy+xdgP9mqTeUVPWHIg==
+motechat@^1.7.4:
+  version "1.8.2"
+  resolved "https://registry.yarnpkg.com/motechat/-/motechat-1.8.2.tgz#7a9d1c76a8d153e9bcc27f40fb02ef2c95ac4e5d"
+  integrity sha512-xOAmZlUopxXeRO5fSK+rd7DxtCsMtL0XJhhwpIOucHlvDdDg1FD9vChvHhevq1X//WtwHvFdnSIdY2wuw56nHw==
   dependencies:
-    motebus "^1.0.9"
+    motebus "^2.0.0"
 
-mqtt-packet@^5.6.1:
+mqtt-packet@^5.6.0:
   version "5.6.1"
-  resolved "https://registry.yarnpkg.com/mqtt-packet/-/mqtt-packet-5.6.1.tgz#923fb704d0ce0bd6ac81c7e1cc09469b1512d2fd"
-  integrity sha512-QECe2ivqcR1LRsPobRsjenEKAC3i1a5gmm+jNKJLrsiq9PaSQ18LlKFuxvhGxWkvGEPadWv6rKd31O4ICqS1Xw==
+  resolved "https://registry.yarnpkg.com/mqtt-packet/-/mqtt-packet-5.6.1.tgz#8ecafce091f5af460664268a22b22091c8915f7b"
+  integrity sha512-eaF9rO2uFrIYEHomJxziuKTDkbWW5psLBaIGCazQSKqYsTaB3n4SpvJ1PexKaDBiPnMLPIFWBIiTYT3IfEJfww==
   dependencies:
     bl "^1.2.1"
     inherits "^2.0.3"
@@ -1112,10 +1117,10 @@ node-telegram-bot-api@^0.30.0:
     request "^2.83.0"
     request-promise "^4.2.2"
 
-nodemailer@^5.1.1:
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/nodemailer/-/nodemailer-5.1.1.tgz#0c48d1ecab02e86d9ff6c620ee75ed944b763505"
-  integrity sha512-hKGCoeNdFL2W7S76J/Oucbw0/qRlfG815tENdhzcqTpSjKgAN91mFOqU2lQUflRRxFM7iZvCyaFcAR9noc/CqQ==
+nodemailer@^6.4.16:
+  version "6.4.16"
+  resolved "https://registry.yarnpkg.com/nodemailer/-/nodemailer-6.4.16.tgz#5cb6391b1d79ab7eff32d6f9f48366b5a7117293"
+  integrity sha512-68K0LgZ6hmZ7PVmwL78gzNdjpj5viqBdFqKrTtr9bZbJYj6BRj5W6WGkxXrEnUl3Co3CBXi3CZBUlpV/foGnOQ==
 
 noop-logger@^0.1.1:
   version "0.1.1"
