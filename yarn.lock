@@ -94,13 +94,12 @@ aws4@^1.8.0:
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.8.0.tgz#f0e003d9ca9e7f59c7a508945d7b2ef9a04a542f"
   integrity sha512-ReZxvNHIOv88FlT7rxcXIIC0fPt4KZqZbOlivyWtXLt8ESx84zd3kMC6iK5jVeS2qt+g7ftS7ye4fi06X5rtRQ==
 
-axios@^0.18.1:
-  version "0.18.1"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-0.18.1.tgz#32d53e4851efdc0a11993b6cd000789d70c05102"
-  integrity sha1-MtU+SFHv3AoRmTts0AB4nXDAUQI=
+axios@^0.21.1:
+  version "0.21.1"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.1.tgz#22563481962f4d6bde9a76d516ef0e5d3c09b2b8"
+  integrity sha512-dKQiRHxGD9PPRIUNIWvZhPTPpl1rf/OxTYKsqKUDjBwYylTvV7SjSHJb9ratfyzM6wCdLCOYLzs73qpg5c4iGA==
   dependencies:
-    follow-redirects "^1.3.0"
-    is-buffer "^1.1.5"
+    follow-redirects "^1.10.0"
 
 balanced-match@^1.0.0:
   version "1.0.0"
@@ -277,7 +276,7 @@ dashdash@^1.12.0:
   dependencies:
     assert-plus "^1.0.0"
 
-debug@^3.1.0, debug@^3.2.6:
+debug@^3.1.0:
   version "3.2.6"
   resolved "https://registry.yarnpkg.com/debug/-/debug-3.2.6.tgz#e83d17de16d8a7efb7717edbe5fb10135eee629b"
   integrity sha512-mel+jf7nrtEl5Pn1Qx46zARXKDpBbvzezse7p7LqINmdoIk8PYP5SySaxEmYv6TZ0JyEKA1hsCId6DIhgITtWQ==
@@ -527,12 +526,10 @@ find-up@^3.0.0:
   dependencies:
     locate-path "^3.0.0"
 
-follow-redirects@^1.3.0:
-  version "1.7.0"
-  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.7.0.tgz#489ebc198dc0e7f64167bd23b03c4c19b5784c76"
-  integrity sha512-m/pZQy4Gj287eNy94nivy5wchN3Kp+Q5WgUPNy5lJSZ3sgkVKSYV/ZChMAQVIgx1SqfZ2zBZtPA2YlXIWxxJOQ==
-  dependencies:
-    debug "^3.2.6"
+follow-redirects@^1.10.0:
+  version "1.14.2"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.14.2.tgz#cecb825047c00f5e66b142f90fed4f515dec789b"
+  integrity sha512-yLR6WaE2lbF0x4K2qE2p9PEXKLDjUjnR/xmjS3wHAYxtlsI9MLLBJUZirAHKzUZDGLxje7w/cXR49WOUo4rbsA==
 
 forever-agent@~0.6.1:
   version "0.6.1"
@@ -730,11 +727,6 @@ is-absolute@^1.0.0:
   dependencies:
     is-relative "^1.0.0"
     is-windows "^1.0.1"
-
-is-buffer@^1.1.5:
-  version "1.1.6"
-  resolved "https://registry.yarnpkg.com/is-buffer/-/is-buffer-1.1.6.tgz#efaa2ea9daa0d7ab2ea13a97b2b8ad51fefbe8be"
-  integrity sha512-NcdALwpXkTm5Zvvbk7owOUSvVvBKDgKP5/ewfXEznmQFfs4ZRmanOeKBTjRVjka3QFoN6XJ+9F3USqfHqTaU5w==
 
 is-callable@^1.1.4:
   version "1.1.4"
@@ -954,6 +946,11 @@ locate-path@^3.0.0:
     p-locate "^3.0.0"
     path-exists "^3.0.0"
 
+lodash@^4.17.11:
+  version "4.17.21"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
+  integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
+
 lodash@^4.17.13:
   version "4.17.13"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.13.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
@@ -1026,22 +1023,22 @@ mkdirp@^0.5.1:
   dependencies:
     minimist "0.0.8"
 
-motebus@^1.0.9:
-  version "1.0.9"
-  resolved "https://registry.yarnpkg.com/motebus/-/motebus-1.0.9.tgz#b931cc67b3fb21abb90b28b0a7745eedb6b49a06"
-  integrity sha512-6ug234DZMCZrUT7D//wNieEE2Se3qN91nRF/lh+idZ0BYuBmulyf03gJM3nNdI3LiEcc3LfKaVWr5pE5I2FXPw==
+motebus@^2.0.0:
+  version "2.0.9"
+  resolved "https://registry.yarnpkg.com/motebus/-/motebus-2.0.9.tgz#1346a641e5894c0710b0097bb18d66a25dbbf2c2"
+  integrity sha512-x9x/9jwiplQ7QkrSv7WySus/a6nJ/RhTd7b4fyNeatxkjfcJgjj0ZlPyMybETTQx1GgkY++9PGDlgeIasTeh2Q==
 
-motechat@^1.5.5:
-  version "1.5.5"
-  resolved "https://registry.yarnpkg.com/motechat/-/motechat-1.5.5.tgz#9d1077accfb28561f2289000dbde8deb77baaaa5"
-  integrity sha512-+dZBUgwUlXomnPF+87ZfFyNMbdfOeqpeug9IhT8e9Qqh81XiHlB8JBDkWuCaA7gRvYjQy+xdgP9mqTeUVPWHIg==
+motechat@^1.7.4:
+  version "1.8.2"
+  resolved "https://registry.yarnpkg.com/motechat/-/motechat-1.8.2.tgz#7a9d1c76a8d153e9bcc27f40fb02ef2c95ac4e5d"
+  integrity sha512-xOAmZlUopxXeRO5fSK+rd7DxtCsMtL0XJhhwpIOucHlvDdDg1FD9vChvHhevq1X//WtwHvFdnSIdY2wuw56nHw==
   dependencies:
-    motebus "^1.0.9"
+    motebus "^2.0.0"
 
-mqtt-packet@^5.6.1:
+mqtt-packet@^5.6.0:
   version "5.6.1"
-  resolved "https://registry.yarnpkg.com/mqtt-packet/-/mqtt-packet-5.6.1.tgz#923fb704d0ce0bd6ac81c7e1cc09469b1512d2fd"
-  integrity sha512-QECe2ivqcR1LRsPobRsjenEKAC3i1a5gmm+jNKJLrsiq9PaSQ18LlKFuxvhGxWkvGEPadWv6rKd31O4ICqS1Xw==
+  resolved "https://registry.yarnpkg.com/mqtt-packet/-/mqtt-packet-5.6.1.tgz#8ecafce091f5af460664268a22b22091c8915f7b"
+  integrity sha512-eaF9rO2uFrIYEHomJxziuKTDkbWW5psLBaIGCazQSKqYsTaB3n4SpvJ1PexKaDBiPnMLPIFWBIiTYT3IfEJfww==
   dependencies:
     bl "^1.2.1"
     inherits "^2.0.3"
